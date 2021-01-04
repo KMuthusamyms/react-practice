@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import Hello from "./Hello";
+import Hello from "./components/Hello";
+import Parent from "./components/Parent";
 import "./style.css";
 
 interface AppProps {}
@@ -11,18 +12,15 @@ interface AppState {
 class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "React"
-    };
   }
 
   render() {
     return (
       <div>
         {[...Array(10)].map((x, i) => (
-          <Hello name={this.state.name} id={i} />
+          <Hello id={i} />
         ))}
-
+        <Parent value="muthusamy" />
         <p>Start editing to see some magic happen :)</p>
       </div>
     );
